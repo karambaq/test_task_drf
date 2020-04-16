@@ -26,7 +26,7 @@ class AppViewSet(viewsets.ModelViewSet):
         })
 
     
-    @action(methods=['get'], detail=True, url_path="info")
+    @action(methods=['get'], detail=True, url_path="test/info")
     def get_info(self, request, pk=None):
         app = get_object_or_404(self.queryset, api_key=pk)
         serializer = AppSerializer(app)

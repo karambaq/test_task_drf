@@ -13,9 +13,11 @@ class AppViewSet(viewsets.ModelViewSet):
     serializer_class = AppSerializer
     queryset = App.objects.all()
 
-    @action(methods=['put'], detail=True, url_path="update")
-    def update_api_key(self, request, pk=None):
-        app = get_object_or_404(self.queryset, api_key=pk)
+    @action(methods=['put'], detail=False, url_path="update")
+    def update_api_key(self, request):
+        print(request.data)
+        api_key = request.headers.get("X-Api-Key", "")
+        app = get_object_or_404(self.queryset, api_key=api_key)
         old_key = app.api_key
         app.update_key()
         new_key = app.api_key
@@ -26,8 +28,12 @@ class AppViewSet(viewsets.ModelViewSet):
         })
 
     
-    @action(methods=['get'], detail=True, url_path="test/info")
-    def get_info(self, request, pk=None):
-        app = get_object_or_404(self.queryset, api_key=pk)
+    @action(methods=['get'], detail=False, url_path="test")
+    def get_info(self, request):
+        print("In get info")
+        print(request.headers)
+        print(request.data)
+        api_key = request.headers.get("X-Api-Key", "")
+        app = get_object_or_404(self.queryset, api_key=api_key)
         serializer = AppSerializer(app)
         return Response({"app": serializer.data})

@@ -17,8 +17,14 @@
 - инструкция по работе с запросами к API: как авторизоваться, как добавить, как удалить и т.д
 
 *Installation*
-1) Create postgresql database "test_task"
+**Create venv and install requirements with**
+`pip install -r requirements.txt`
 
+1) Create postgresql database `test_task`
+2) Change DBUSER in `settings.py`
+
+**Run with**
+`python manage.py runserver`
 
 *Endpoints:*
 

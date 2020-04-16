@@ -1,4 +1,4 @@
-*Task*
+# Task
 
 Тестовое задание – дополнительный способ для нас убедиться в вашей квалификации и понять, какого рода задачи вы выполняете эффективнее всего.
 Расчётное время на выполнение тестового задания: 2-2,5 часа.
@@ -16,9 +16,12 @@
 - инструкция по разворачиванию приложения (в docker или локально)
 - инструкция по работе с запросами к API: как авторизоваться, как добавить, как удалить и т.д
 
-*Installation*
-**Create venv and install requirements with**
-`pip install -r requirements.txt`
+
+# Installation
+----
+    ## Create venv and install requirements with
+
+    `pip install -r requirements.txt`
 
 1) Create postgresql database `test_task`
 2) Change DBUSER in `settings.py`
@@ -26,7 +29,7 @@
 **Run with**
 `python manage.py runserver`
 
-*Endpoints:*
+# Endpoints:
 
 **List apps**
 ----

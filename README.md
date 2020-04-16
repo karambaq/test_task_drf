@@ -1,0 +1,1 @@
+1) Create postgresql database "test_task"
